@@ -9,6 +9,10 @@ import partytownPlugin from "partytown/mod.ts";
 import manifest from "./live.gen.ts";
 import site from "./site.json" assert { type: "json" };
 
+if (Deno.env.get("BREAK")) {
+  Deno.exit(1);
+}
+
 await start($live(manifest, site), {
   plugins: [
     partytownPlugin(),
