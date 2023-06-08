@@ -15,7 +15,7 @@ COPY --chown=deno:deno . deco
 
 WORKDIR /app/deco
 
-ENV DENO_DEPLOYMENT_ID=${GIT_REVISION}
+ENV DENO_DEPLOYMENT_ID=$GIT_REVISION
 
 RUN deno cache --lock-write main.ts
 
